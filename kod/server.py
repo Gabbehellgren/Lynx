@@ -10,6 +10,7 @@
 from time import time
 from threading import Thread
 from socket import gethostname, gethostbyname, socket, AF_INET, SOCK_DGRAM, SOL_SOCKET, SO_BROADCAST
+from ansi_colors import Colors
 
 
 
@@ -19,44 +20,9 @@ from socket import gethostname, gethostbyname, socket, AF_INET, SOCK_DGRAM, SOL_
 # Den ska skicka ut vanliga, varnings och error meddelanden.
 # 2026/04/06
 
-class ConsoleOutput:
+class ConsoleOutput(Colors):
     def __init__(self, id:str):
         self.id = id
-
-        self.colors = ["black", "red", "green", "yellow", "blue", "magenta", "cyan", "white"]
-        self.bright_colors = ["BLACK", "RED", "GREEN", "YELLOW", "BLUE", "MAGENTA", "CYAN", "WHITE"]
-        self.background_colors = ["bg_black", "bg_red", "bg_green", "bg_yellow", "bg_blue", "bg_magenta", "bg_cyan", "bg_white"]
-        self.styles = ["end", "bold", "dim", "italic", "underline", "blink", "reverse", "strike"]
-
-        self.generateColor()
-    
-
-    def generateColor(self, mode = 0):
-        names: list
-        if mode == 0:
-            names = self.colors
-            start = 30
-
-        elif mode == 1:
-            names = self.bright_colors
-            start = 90
-
-        elif mode == 2:
-            names = self.background_colors
-            start = 40
-
-        elif mode == 3:
-            names = self.styles
-            start = 0
-
-        for name in names:
-            index = names.index(name) + start
-            code = "\033[" + str(index) + "m"
-            setattr(self, name, code)
-
-        if mode != 3:
-            return self.generateColor(mode + 1)
-
 
     def standard(self, message: str):
         print(self.BLACK + "[" + "       " + "] ", end=self.end)

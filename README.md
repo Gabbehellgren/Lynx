@@ -2,6 +2,8 @@
 
 Av Oscar Hellgren Te23A Ebersteinska Gymnasium 
 
+Safe 
+
 ## 1. Innehålls förtekning
 1. <a href="#1-innehålls-förtekning">Innehålls förtekning</a>
 2. <a href="#2-bakgrund">Bakgrund</a>
