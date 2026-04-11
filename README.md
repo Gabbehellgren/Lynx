@@ -1,6 +1,8 @@
-# Kravspecifikation för projekt: **Lynx**
+# Kravspecifikation för projekt: **SRPCH**
 
-Loke är sprattens gud
+Specially Protected Remote Controll (by) Hellgren
+
+<img src="banner.jpg">
 
 Av Oscar Hellgren Te23A Ebersteinska Gymnasium 
 
